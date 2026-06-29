@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Defining css variables for the color palette to maintain consistency across the website.*/
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --background-color: #f5f5f5;
+  --card-color: #ffffff;
+  --text-color: #333333;
+}
+
+/*Applying general styles to the entire webpage, including the font, background color, text color, and line spacing.*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/*Styling the website header and navigation menu, including the sticky header and navigation links.*/
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+/*Styling the hero section to introduce the portfolio with a heading, description, and call-to-action button.*/
+#hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: white;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+}
+
+/*Styling the about section to display personal information and profile image.*/
+#about {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#about h2 {
+  margin-bottom: 20px;
+}
+
+#about img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+#about p {
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+/*Styling the skills section using a grid layout to display skill cards.*/
+#skills {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#skills h2 {
+  margin-bottom: 30px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: var(--card-color);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/*Styling the projects section using a grid layout to showcase project cards.*/
+#projects {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#projects h2 {
+  margin-bottom: 30px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background-color: var(--card-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  margin-bottom: 20px;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  color: var(--primary-color);
+}
+
+/*Styling the contact section and form elements to create a simple contact form.*/
+#contact {
+  padding: 60px 20px;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+
+/*Styling the footer to display copyright information and social media links.*/
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  color: var(--secondary-color);
+}
+
+/*Applying responsive styles for tablet-sized screens to improve the layout.*/
+@media (max-width: 768px) {
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/*Applying responsive styles for mobile-sized screens to improve readability and usability.*/
+@media (max-width: 375px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
