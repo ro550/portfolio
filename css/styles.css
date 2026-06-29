@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+/*Applying smooth scrolling when navigating between sections of the webpage.*/
+html {
+  scroll-behavior: smooth;
+}
+
 /*Defining css variables for the color palette to maintain consistency across the website.*/
 :root {
   --primary-color: #2c3e50;
@@ -15,10 +20,15 @@
 
 /*Applying general styles to the entire webpage, including the font, background color, text color, and line spacing.*/
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+}
+
+/*Adding space above each section when navigating with the sticky header.*/
+section {
+  scroll-margin-top: 80px;
 }
 
 /*Styling the website header and navigation menu, including the sticky header and navigation links.*/
@@ -76,10 +86,13 @@ nav a:hover {
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 5px;
+
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
   background-color: var(--primary-color);
+  transform: scale(1.05);
 }
 
 /*Styling the about section to display personal information and profile image.*/
@@ -148,6 +161,14 @@ nav a:hover {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
 
 .project-card h3 {
