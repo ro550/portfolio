@@ -31,6 +31,25 @@ section {
   scroll-margin-top: 80px;
 }
 
+/*Reusable container to center and constrain section content.*/
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/*Reusable heading styles for each section.*/
+.section-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666666;
+  margin-bottom: 40px;
+}
+
 /*Styling the website header and navigation menu, including the sticky header and navigation links.*/
 header {
   background-color: var(--primary-color);
@@ -95,72 +114,96 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/*Smaller button variant used inside project cards.*/
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/*Outlined button variant used as a secondary action inside project cards.*/
+.btn-outline {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
 /*Styling the about section to display personal information and profile image.*/
-#about {
+.about {
   padding: 60px 20px;
-  text-align: center;
 }
 
-#about h2 {
-  margin-bottom: 20px;
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-#about img {
+.about-image {
+  flex-shrink: 0;
+}
+
+.profile-photo {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.about-text p {
   margin-bottom: 20px;
 }
 
-#about p {
-  max-width: 700px;
-  margin: 0 auto 20px;
+.about-text p:last-child {
+  margin-bottom: 0;
 }
 
-/*Styling the skills section using a grid layout to display skill cards.*/
-#skills {
+/*Styling the skills section using a grid layout to display skill tags.*/
+.skills {
   padding: 60px 20px;
   text-align: center;
-}
-
-#skills h2 {
-  margin-bottom: 30px;
 }
 
 .skills-grid {
-  display: grid;
-  list-style: none;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.skill-card {
+.skill-tag {
   background-color: var(--card-color);
-  padding: 20px;
+  padding: 12px 20px;
   border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /*Styling the projects section using a grid layout to showcase project cards.*/
-#projects {
+.projects {
   padding: 60px 20px;
-  text-align: center;
-}
-
-#projects h2 {
-  margin-bottom: 30px;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .project-card {
   background-color: var(--card-color);
-  padding: 20px;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   transition: all 0.3s ease;
@@ -172,22 +215,37 @@ nav a:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
 
-.project-card h3 {
-  margin-bottom: 15px;
+.project-image {
+  width: 100%;
+  height: 180px;
 }
 
-.project-card p {
-  margin-bottom: 20px;
-}
-
-.project-card a {
-  text-decoration: none;
-  color: var(--secondary-color);
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dddddd;
+  color: #777777;
   font-weight: bold;
 }
 
-.project-card a:hover {
-  color: var(--primary-color);
+.project-info {
+  padding: 20px;
+}
+
+.project-title {
+  margin-bottom: 15px;
+}
+
+.project-description {
+  margin-bottom: 20px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
 }
 
 /*Styling the contact section and form elements to create a simple contact form.*/
@@ -270,9 +328,13 @@ footer a:hover {
 /*Applying responsive styles for tablet-sized screens to improve the layout.*/
 @media (max-width: 768px) {
 
-  .skills-grid,
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
   }
 
 }
@@ -294,7 +356,6 @@ footer a:hover {
     font-size: 2rem;
   }
 
-  .skills-grid,
   .projects-grid {
     grid-template-columns: 1fr;
   }
